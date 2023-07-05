@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOK MY SHOW</title> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js "></script>
+       
+</head>
+<body>
+   
+<div class="table table-bordered table-hover ">
+    <h1 class="container p-3 border-2" style="text-align: center;">BOOK MY SHOW</h1>
+    {% if m_list %}
+    <table class="table table-bordered table-hover table-striped">
+    <thead>
+        <th>Movie</th>
+        <th>Hero</th>
+        <th>Heroine</th>
+        <th>Director</th>
+        <th>Release Date</th>
+        <th>Rating</th>        
+        <th>Image</th>
+    </thead>
+    {% for mv in m_list %}
+    <tr>
+        <td>{{mv.Moviename}}</td>
+        <td>{{mv.Heroname}}</td>
+        <td>{{mv.Heroiename}}</td>
+        <td>{{mv.Director}}</td>
+        <td>{{mv.Releasedate}}</td>
+        <td>{{mv.rating}}</td>             
+        <td><img src="/media/{{mv.mimage}}" width="200" height="200"></td> 
+    </tr>
+    {% endfor %}    
+    </table>
+    {% else %}
+    <p>no movies</p>
+    {% endif %}
+</div>
+    
+</body>
+</html>
